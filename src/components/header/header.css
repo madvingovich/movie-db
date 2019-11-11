@@ -1,0 +1,9 @@
+header {
+  background: rgba(227, 237, 247, 0.44);
+  border-radius: 0 0 5px 5px;
+}
+.logo a{
+  font-size: 1.6em;
+  font-weight: 700;
+  text-transform: initial;
+}

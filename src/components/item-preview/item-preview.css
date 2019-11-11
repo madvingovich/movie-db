@@ -1,0 +1,14 @@
+.item h2 {
+  font-size: 1.1em;
+}
+
+.item img {
+  width: 100%;
+}
+.item a {
+  transition: .2s;
+}
+.item a:hover {
+  text-decoration: none;
+  color: #495664;
+}

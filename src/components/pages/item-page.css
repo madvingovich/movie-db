@@ -1,0 +1,14 @@
+.item-head span {
+  font-size: .7em;
+}
+.item-head .head-rate {
+  white-space: nowrap;
+}
+.item-content b {
+  font-weight: 700;
+  color: #000;
+}
+
+.imdb-image {
+  width: 50px;
+}

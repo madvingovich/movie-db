@@ -1,13 +1,64 @@
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+p {
+}
+
+ul {
+  list-style-type: none;
+  padding-inline-start: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: initial;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media all and (max-width: 992px) {
+  body {
+    font-size: .7em;
+  }
+  h1 {
+    font-size: 1.6em;
+  }
+}
+
+@media all and (max-width: 380px) {
+  header .btn {
+    font-size: .6rem !important;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .search-input-wrapper {
+    position: relative;
+    left: 20px;
+    width: 100%;
+  }
+  .search-box form {
+    padding-left: 0;
+  }
+
+  .year-input, .search-box select {
+    width: 100px;
+    padding: 10px 10px !important;
+  }
+  .search-item h4 {
+    font-size: 1.3em;
+  }
+  .search-item h4 a:after {
+    height: 1px;
+    left: 0;
+  }
+}
+
+@media all and (max-width: 567px) {
+  .search-item h4 {
+    font-size: 1em;
+  }
 }

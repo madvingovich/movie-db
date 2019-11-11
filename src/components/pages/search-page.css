@@ -1,0 +1,41 @@
+.search-box input, .search-box button, .search-box select {
+  position: relative;
+  border-radius: 50px;
+  outline: none;
+  border: none;
+  box-shadow: 0 0 2px #8e8e8e;
+  font-family: 'Raleway', sans-serif;
+  transition: .3s;
+}
+
+.search-box form {
+  padding-left: 40px;
+}
+
+.search-box input, .search-box select {
+  padding: 10px 20px !important;
+  z-index: 3;
+}
+.search-box input:focus {
+  box-shadow: 0 0 5px rgba(105, 128, 193, 0.4);
+}
+.search-box button {
+  position: relative;
+  z-index: 2;
+  left: -40px;
+  padding: 10px 20px 10px 50px;
+  background: #000;
+  color: #fff;
+  letter-spacing: 1.5px;
+}
+.search-box button:hover {
+  box-shadow: 0 0 5px black;
+}
+
+.year-input, .search-box select {
+  width: 150px;
+}
+
+.search-box h1 {
+  color: #ffafa7;
+}

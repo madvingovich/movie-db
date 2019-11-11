@@ -1,0 +1,32 @@
+.search-item:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+}
+.search-item {
+  background: transparent;
+}
+.search-item:hover {
+  background: #f9f9f9;
+}
+.search-item h4 a {
+  position: relative;
+}
+.search-item .btn {
+  white-space: nowrap;
+}
+.search-item h4 a:after {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 99%;
+  left: -20px;
+  height: 2px;
+  width: 0;
+  background: #000;
+}
+.search-item h4 a:hover::after {
+  transition: .2s;
+  width: 50%;
+}
+.search-item h4 a:hover {
+  text-decoration: none;
+}
