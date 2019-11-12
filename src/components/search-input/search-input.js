@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from "prop-types";
 
 export default class SearchInput extends Component {
+    static propTypes = {
+        onChange: PropTypes.func.isRequired
+    };
+
     state = {
         value: ''
     };
@@ -22,7 +27,7 @@ export default class SearchInput extends Component {
                     onChange={this.onValueChange}
                     value={this.state.value}
                     type="search"
-                    placeholder="Type to search..."/>
+                    placeholder="Title"/>
         );
     }
 };

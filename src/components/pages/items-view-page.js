@@ -1,5 +1,6 @@
 import React from 'react';
 import ItemPreview from "../item-preview/item-preview";
+import PropTypes from "prop-types";
 
 const ItemsViewPage = ({ items, title }) => {
     const itemsList = items.map((item, idx) => {
@@ -14,6 +15,11 @@ const ItemsViewPage = ({ items, title }) => {
             </div>
         </div>
     );
+};
+
+ItemsViewPage.propTypes = {
+    items: PropTypes.array.isRequired,
+    title: PropTypes.string.isRequired
 };
 
 export default ItemsViewPage;

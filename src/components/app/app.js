@@ -4,13 +4,12 @@ import { WelcomePage, ItemPage, SearchPage } from '../pages'
 import ErrorBoundary from "../error-boundary";
 import Header from "../header";
 import ItemsViewPage from "../pages/items-view-page";
-
 import { withMovieService } from "../HOC/";
 
 
 class App extends Component {
 
-    renderItemsPageWithProps = (items, title) => {
+    renderItemsPageWithRouterProps = (items, title) => {
         return props => <ItemsViewPage {...props} items={items} title={title} />
     };
 
@@ -31,11 +30,11 @@ class App extends Component {
                             <Route
                                 path="/movies"
                                 exact
-                                render={ this.renderItemsPageWithProps(defaultMovies, moviesTitle) }  />
+                                render={ this.renderItemsPageWithRouterProps(defaultMovies, moviesTitle) }  />
                             <Route
                                 path="/series"
                                 exact
-                                render={ this.renderItemsPageWithProps(defaultSeries, seriesTitle) }  />
+                                render={ this.renderItemsPageWithRouterProps(defaultSeries, seriesTitle) }  />
                             <Route path="/search" component={SearchPage} />
                             <Route path="/:title" exact component={ItemPage} />
                         </Switch>

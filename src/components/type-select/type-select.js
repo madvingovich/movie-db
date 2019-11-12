@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class TypeSelect extends Component {
+    static propTypes = {
+        changeType: PropTypes.func.isRequired
+    };
+
     state = {
         selected: null
     };

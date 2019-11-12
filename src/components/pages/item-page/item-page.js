@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Loader from "../loader";
-import { withMovieService } from '../HOC';
+import Loader from "../../loader";
+import { withMovieService } from '../../HOC';
 
-import imdbImage from './images/imdb.jpg';
+import imdbImage from './imdb.jpg';
 
 import './item-page.css';
 
@@ -41,17 +41,19 @@ class ItemPage extends Component {
         const imdbUrl = `https://www.imdb.com/title/${imdbID}/`;
 
         const ratings = Ratings.map((rate, idx) => {
-            return <p key={idx} className="ml-3"><b>{rate.Source}:</b> {rate.Value}</p>
+            return <p key={idx} className="ml-2 ml-md-3"><b>{rate.Source}:</b> {rate.Value}</p>
         });
 
         return (
             <div className="row item-content">
-               <div className="col-3">
-                   <img src={Poster} alt="poster"/>
-                   <h4 className="mt-4">Ratings:</h4>
-                   {ratings}
+               <div className="col-12 col-md-3 d-flex d-md-block mb-4 mb-md-0">
+                   <img className="item-page-main-image" src={Poster} alt="poster"/>
+                   <div className="pl-3 pl-md-0">
+                       <h4 className="mt-4">Ratings:</h4>
+                       {ratings}
+                   </div>
                </div>
-               <div className="col-9">
+               <div className="col-12 col-md-9">
                    <div className="item-head d-flex align-items-start justify-content-between">
                        <h1>{Title}</h1>
                        <p className="head-rate mb-0 ml-4 d-flex align-items-center">

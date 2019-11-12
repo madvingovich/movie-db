@@ -1,22 +1,31 @@
 import React, { Component } from 'react';
-import SearchForm from "../search-form";
-import SearchPageItemsList from "../search-page-items-list";
-import Loader from "../loader";
+import SearchForm from "../../search-form";
+import SearchPageItemsList from "../../search-page-items-list";
+import Loader from "../../loader";
+import PropTypes from 'prop-types';
 
 import './search-page.css';
 
 
 class SearchPage extends Component {
+    static propTypes = {
+        history: PropTypes.object.isRequired,
+        location: PropTypes.object.isRequired,
+        match: PropTypes.object.isRequired
+    };
+
     state = {
         items: null,
         loading: false,
+        pages: null,
         error: false
     };
 
-    updateItems = (items) => {
+    updateItems = (items, pages) => {
         this.setState({
             loading: false,
-            items
+            items,
+            pages
         });
     };
 
@@ -48,7 +57,8 @@ class SearchPage extends Component {
 
                 {this.state.loading ? <Loader /> : null}
                 {this.state.error ? <h1 className="text-center py-5">{this.state.error}</h1> : null}
-                {this.state.items ? <SearchPageItemsList items={this.state.items} /> : null}
+
+                <SearchPageItemsList items={this.state.items} />
             </div>
         );
     }

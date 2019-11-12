@@ -5,12 +5,21 @@ import SearchInput from "../search-input";
 import { withMovieService } from '../HOC';
 import {parse} from "query-string";
 
+import PropTypes from 'prop-types';
+
+
 class SearchForm extends Component {
+    static propTypes = {
+        onError: PropTypes.func.isRequired,
+        onLoadingItems: PropTypes.func.isRequired,
+        updateItems: PropTypes.func.isRequired,
+        movieService: PropTypes.object.isRequired
+    };
 
     state = {
         searchValue: '',
         year: '',
-        type: null,
+        type: null
     };
 
     componentDidMount() {
@@ -54,8 +63,12 @@ class SearchForm extends Component {
                 if(res.Error) {
                     onError(res.Error);
                 } else {
-                    updateItems(res.Search);
-                    this.props.history.push(`?searchValue=${searchValue}&year=${year}&type=${type}`)
+                    let pages = null;
+                    if(res.totalResults > 10) {
+                        pages = +res.totalResults[0] + 1;
+                    }
+                    updateItems(res.Search, pages);
+                    this.props.history.push(`?searchValue=${searchValue}&year=${year}&type=${type}`);
                 }
             })
             .catch(onError);
@@ -64,7 +77,7 @@ class SearchForm extends Component {
     render() {
         return (
             <form
-                className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-around"
+                className="form d-flex flex-wrap align-items-center justify-content-center justify-content-md-around"
                 action="#"
                 onSubmit={(e) => {
                     e.preventDefault(); this.onSearch()

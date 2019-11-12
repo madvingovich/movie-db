@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-
+import PropTypes from "prop-types";
 import './search-page-item.css';
 
 
@@ -20,6 +20,14 @@ const SearchPageItem = ({ item }) => {
             </div>
         </div>
     );
+};
+
+SearchPageItem.propTypes = {
+    item: PropTypes.shape({
+        Title: PropTypes.string.isRequired,
+        Type: PropTypes.string.isRequired,
+        Year: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ])
+    }).isRequired
 };
 
 export default SearchPageItem;

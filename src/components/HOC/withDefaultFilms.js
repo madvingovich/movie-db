@@ -1,6 +1,7 @@
 import React from 'react';
 import MovieService from "../../services/movie-service";
 
+
 const withDefaultMovies = () => (Wrapped) => {
     const movieService = new MovieService();
     const movies = movieService.getDefaultMovies();
